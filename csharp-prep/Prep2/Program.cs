@@ -4,9 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.write("What is your grade percentage? ");
-        string answer = Console.readline();
-        int percent = int.parse(answer);
+        Console.WriteLine("What is your grade percentage? ");
+        string answer = Console.ReadLine();
+        int percent = int.Parse(answer);
 
         string letter = "";
 
