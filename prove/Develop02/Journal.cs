@@ -16,13 +16,13 @@ public class Journal
 //----------separation bar-------------------
     public void DisplayEntries()
     {
-        //loop through each entry 
+
         foreach (Entry entry in _entries)
         {           
         entry.display();
         Console.WriteLine();            
         }
-        //call its display method    
+   
 
     }
 
@@ -60,7 +60,7 @@ public class Journal
 
 
 }
-//----------separation bar-------------------Done
+
 
 public class Entry
 {
