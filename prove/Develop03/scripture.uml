@@ -1,0 +1,35 @@
+@startuml
+class Program {
+Main
+}
+
+Class Scripture{
+
+Word
+Reference
+Display
+Clearscreen
+HideWords
+Text
+}
+Program*-- Scripture
+
+
+Class Reference {
+Reference
+Text
+}
+Scripture*-- Reference
+
+
+Class Word {
+HideWords
+Set Attribute
+Wordlength
+if hidden
+print "_"
+else
+word
+}
+Scripture *-- Word
+@enduml
