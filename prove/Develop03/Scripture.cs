@@ -30,11 +30,34 @@ class Scripture
     public void HideRandom(int count)
     {
         Random random = new Random();
+        int unhidden = 0;
+        foreach (Word word in _words)
+        {
+            if (!word.ishidden())
+            {
+                unhidden++;
+            }
+
+
+        }
+            if (unhidden < count)
+            {
+                count = unhidden;
+            }
         for ( int i = 0; i < count; i++)
         {
+            bool wordfound = false;
+            while (wordfound == false)
+            {
             int randomindex = random.Next(_words.Count);
-            _words[randomindex].Hidewords();
+            if (!_words[randomindex].ishidden())
+            {
+            _words[randomindex].Hidewords();    
+            wordfound = true;              
+            }             
+            } 
         }
+        
 
     }
 
