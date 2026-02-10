@@ -2,42 +2,37 @@ using System;
 
 public class Reference
 {
-    static void Main(string[] args)
+    private int _startVerse;
+    private int _endVerse;
+    private int _Chapter;
+    private string _Book;
+
+  public Reference(string book, int chapter, int verse)
     {
-        Console.WriteLine("2 nephi 3:4-5");
-
-        Console.WriteLine
-
-
+        _Book = book;
+        _Chapter = chapter;
+        _startVerse = verse;
+        _endVerse = verse;
     }
-}
 
-
-
-
-
-
-
-{
-    List<string> prompts = new List<string>
-{
-"Nephi 12:12",
-"Alma 5:12",
-"Quote",
-"Quot 2",
-"number",
-};
-
-public string Randomprompts()
+ public Reference(string book, int chapter, int startverse, int endverse)
     {
-        Random rand = new Random();
-        {
-        int randomindex = rand.Next(0,prompts.Count() - 1);
+        _Book = book;
+        _Chapter = chapter;
+        _startVerse = startverse;
+        _endVerse = endverse;
+    }
 
-        return prompts[randomindex];
+    public string Getdisplaytext()
+    {
+        if(_startVerse == _endVerse)
+        {
+            return $"{_Book} {_Chapter} {_startVerse}";
+        }
+        else
+        {
+            return $"{_Book} {_Chapter} {_startVerse} -{_endVerse}";   
         }
 
-
     }
-
 }
