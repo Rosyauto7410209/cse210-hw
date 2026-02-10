@@ -50,14 +50,5 @@ class Scripture
         }
         return true;
     }
-
-
-
-
-
-
-
-
-
     
 }
