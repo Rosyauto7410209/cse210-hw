@@ -30,10 +30,3 @@ public class BreathingActivity: Activity
 
     }
 }
-//- _breathInSeconds:int
-//- _exhaleSeconds:int
-//+ breathIn():void
-//+ exhale():void
-//+ breathingactivity()
-//+ breathingactivity(name:string, description:string)
-//+ run():void

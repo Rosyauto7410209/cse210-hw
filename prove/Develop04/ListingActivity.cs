@@ -34,12 +34,12 @@ public class ListingActivity: Activity
         protected override void DoActivity()
     {
         Console.WriteLine();
-        Console.Write("List as many responses as you can.");
+        Console.Write("List as many responses as you can. ");
         Console.WriteLine($"{randomprompt()}");
         Console.WriteLine();
         Console.Write("You may start in ");
         Thread.Sleep(1000);
-        showCountdown(5);
+        showCountdown(10);
         Console.WriteLine();
         _count = 0;
         DateTime endTime = DateTime.Now.AddSeconds(getDuration());
@@ -55,10 +55,3 @@ public class ListingActivity: Activity
         Console.WriteLine($"Congratulations, you finished {_count} items.");
     }
 }
-//- _prompts:List<string>
-//- _count:int
-//+ listingactivity()
-//+ listingactivity(name:string, description:string)
-//+ randomprompt():string
-//+ getCount():int
-//+ run():void

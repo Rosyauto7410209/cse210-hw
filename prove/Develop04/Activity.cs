@@ -100,11 +100,11 @@ public abstract class Activity
           for(int i = seconds; i >= 1; i--)
         {
             Console.Write(i);
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
             Console.Write("\b");
             if (i >= 10)
             {
-                Console.WriteLine("\b");
+                Console.Write(" \b\b");
             }
         }
 

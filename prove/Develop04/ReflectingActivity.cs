@@ -64,16 +64,3 @@ public class ReflectingActivity: Activity
         }
     }
 }
-//- _prompt:List<string>
-//- _questions:List<string>
-//+ getRandomQuestion():string
-//+ getRandomPrompt():string
-//+ reflectingactivity()
-//+ reflectingactivity(name:string, description:string)
-// run():void
-
-//After the starting message, select a random prompt to show the user such as:
-
-
-//After displaying the prompt, the program should ask the to reflect on questions that relate to this experience. These questions should be pulled from a list such as the following:
-
