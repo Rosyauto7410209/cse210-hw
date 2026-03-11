@@ -194,10 +194,3 @@ public class GoalManager
         Console.WriteLine($"You have {_score} points!");
     }
 }
-
-
-
-
-
-
-

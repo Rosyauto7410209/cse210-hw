@@ -38,17 +38,3 @@ public override string Serialize()
     return $"Eternal|{GetName()}|{GetDescription()}|{GetPoint()}";
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
