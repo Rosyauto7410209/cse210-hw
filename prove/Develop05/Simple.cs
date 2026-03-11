@@ -56,8 +56,3 @@ public class Simple: Goal
         return $"Simple|{GetName()}|{GetDescription()}|{GetPoint()}|{_iscomplete}";
     }
 }
-
-
-
-
-
