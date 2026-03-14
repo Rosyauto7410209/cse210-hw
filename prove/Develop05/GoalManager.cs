@@ -79,25 +79,25 @@ public class GoalManager
             string description = Console.ReadLine();
             Console.Write("How many points do you want to assign for this goal?");
             int point = int.Parse(Console.ReadLine());
-            if(choice = "1")
+            if(choice == "1")
             {
                 _goals.Add(new Simple(name, description, point));
             }
-            else if(choice = "2")
+            else if(choice == "2")
             {
                 _goals.Add(new Eternal(name, description, point));
             }
-            else if(choice = "3")
+            else if(choice == "3")
             {
-                Console.Write("How many times would you like to complete this goal?")
+                Console.Write("How many times would you like to complete this goal?");
                 int target = int.Parse(Console.ReadLine());
-                Console.Write("What would the bonus be for completing this goal for that limit?")
+                Console.Write("What would the bonus be for completing this goal for that limit?");
                 int bonus = int.Parse(Console.ReadLine());
-                _goals.Add(new Eternal(name, description, point, target, bonus));
+                _goals.Add(new Checklist(name, description, point, target, bonus));
             }
             else
             {
-                Console.WriteLine("Invalid option.")
+                Console.WriteLine("Invalid option.");
             }
     }
     //- ListGoals():void
@@ -142,7 +142,7 @@ public class GoalManager
         }
     }
     // - SaveEvents(filename:string):void
-    public void SaveGoals(string filename)
+    public void SaveGoals()
     {
         Console.Write("What is the name for your goal file?");
         string file = Console.ReadLine();
@@ -154,16 +154,16 @@ public class GoalManager
                 outputFile.WriteLine(goal.Serialize());
             }
         }
-        Console.WriteLine("Goal saved Successfully.")
+        Console.WriteLine("Goal saved Successfully.");
     }
     // - LoadEvents(filename:string):void
-    public void LoadGoals(string filename)
+    public void LoadGoals()
     {
         Console.Write("What is the name for your goal file?");
         string file = Console.ReadLine();
         if(!File.Exists(file))
         {
-            Console.WriteLine("File not found.")
+            Console.WriteLine("File not found.");
             return;
         }
         string[] lines = File.ReadAllLines(file);
@@ -192,5 +192,6 @@ public class GoalManager
     public int GetScore()
     {
         Console.WriteLine($"You have {_score} points!");
+        return _score;
     }
 }

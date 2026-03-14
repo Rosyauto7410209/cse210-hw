@@ -13,7 +13,7 @@ public class Simple: Goal
         _iscomplete = iscomplete;
     }
     //+ Deserialize(parts: string[]): SimpleGoal
-    public Simple Deserialize(string[] parts)
+    public static Simple Deserialize(string[] parts)
     {
         string name = parts[1];
         string description = parts[2];

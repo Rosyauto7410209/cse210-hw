@@ -2,15 +2,15 @@
 public class Eternal: Goal
 {
 public Eternal(string name, string description, int point): base (name, description, point){}
-    
+
     //+ Deserialize(parts: string[]): EternalGoal
-   public Eternal Deserialize(string[] parts)
+   public static Eternal Deserialize(string[] parts)
     {
         string name = parts[1];
         string description = parts[2];
         int point = int.Parse(parts[3]);
         bool iscomplete = bool.Parse(parts[4]);
-        return new Eternal(name, description, point, iscomplete);
+        return new Eternal(name, description, point);
     }
 
 

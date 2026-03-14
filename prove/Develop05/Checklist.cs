@@ -23,7 +23,7 @@ public Checklist(string name, string description, int point, int targetcount, in
     }
 
     //+ Deserialize(parts: string[]): CheckListGoal
-       public Checklist Deserialize(string[] parts)
+       public static Checklist Deserialize(string[] parts)
     {
         string name = parts[1];
         string description = parts[2];
