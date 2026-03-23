@@ -1,0 +1,68 @@
+@startuml
+program-> Activity
+
+Activity <|-- Running
+Activity <|--Swimming
+Activity <|-- Cycling
+
+class program
+{
+-activities:List<Activity>
++main()
++Displayactivities():void
++addActivity(Activity):void
++removeActivity(Activity):void
+}
+
+Abstract class Activity
+{
+-Date:string
+-Length:double
++Activity(Date, Length)
+getDate():void
++getLength():void
++setDate(Date):string
++setLength(Length):double
++getDistance():double
++getSpeed():double
++getPace():double
++getName():string
++getSummary():string
+}
+
+class Running
+{
+-Distance:double
++Running(Date, Length, Distance)
++getDistance():double
++setDistance(Distance):void
++getSpeed():double
++getPace():double
++getName():string
+}
+
+class Swimming
+{
+-Laps:int
++Swimming(Date, Length, Laps)
+getLaps():int
+setLaps(Laps):void
++getDistance():double
++getSpeed():double
++getPace():double
++getName():string
+}
+
+class Cycling
+{
+-Speed:double
++Cycling(Date, Length, Speed)
++getSpeed():double
++setSpeed(Speed):double
++getDistance():double
++getPace():double
++getName():string
+}
+
+
+@enduml

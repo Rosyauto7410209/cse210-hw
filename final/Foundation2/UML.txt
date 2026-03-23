@@ -1,0 +1,76 @@
+@startuml
+class program
+{
++ Main():void
+}
+program-->Order
+program --> Customer
+program --> Product
+program --> Address
+Order o-- Customer
+Order o-- Product
+Address --* Customer
+
+class Order
+{
+-product:List<Product>
+-customer:Customer
++Order(product, customer)
++getproduct():List<Product>
++getcustomer():Customer
++addproduct(Product):void
++setcustomer(Customer):void
++gettotalPrice():double
++getpackinglabel():string
++getshippinglabel():string
+}
+
+class Product
+{
+-Name:string
+-ID:string
+-Price:double
+-Quantity:int
++Product(Name, ID, Price, Quantity)
++getName():string
++getID():string
++getPrice():double
++getQuantity():int
++setName(Name):void
++setID(ID):void
++setPrice(Price):void
++setQuantity(Quantity):void
++gettotalCost():double
+}
+
+class Customer
+{
+-Name:string
+-address:Address
++Customer(Name, address)
++getName():string
++getaddress():Address
++setName(Name):void
++setaddress(Address):void
++LivesinUSA():bool
+}
+
+class Address
+{
+-Street:string
+-City:string
+-StateProvince:string
+-Country:string
++Address(Street, City, StateProvince, Country)
++getStreet():string
++getCity():string
++getStateProvince():string
++getCountry():string
++setStreet(Street):string
++setCity(City):string
++setStateProvince(StateProvince):string
++setCountry(Country):string
++LivesinUSA():bool
++getfullAddress():string
+}
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+class program
+{
++ Main():void
+}
+program-->Video
+
+Video--|> Contentitem
+Abstract class Contentitem
+{
+-Title:string
+-author:string
++contentitem(title, author)
++Displayinfo():void
+}
+
+class Video
+{
+-lengthinSeconds:int
+-comments:List<Comment>
++Video(title, author,lengthinSeconds)
++AddComment(Comment): void
++GetCommentcount(): int
++DisplayDetails(): void
++DisplayComments(): void
+}
+Comment --* Video
+class Comment
+{
+-Username: string
+-Text: string
++Comment(username, text)
++DisplayComment(): void
+}
+@enduml

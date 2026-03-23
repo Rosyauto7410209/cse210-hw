@@ -1,0 +1,86 @@
+@startuml
+program-> Event
+Event<|-- Lectures
+Event<|-- Outdoor
+Event<|-- Reception
+Event*--Address
+class program
+{
++Main()
+}
+
+
+abstract class Event
+{
+-Title:string
+-Description:string
+-Date:string
+-Time:string
+-Address:Address
++Event(Title, Description, Date, Time, Address)
++getTitle():string
++getDescription():string
++getDate():string
++getTime():string
++getAddress():Address
++setTitle(Title):void
++setDescription(Description):void
++setDate(Date):void
++setTime(Time):void
++setAddress(Address):void
++getfullDetails():string
++getstandardDetails():string
++getshortDetails():string
+}
+
+class Lectures
+{
+-speakerName:string
+-Capacity:int
++Lectures(Title, Description, Date, Time, Address, speakerName, Capacity)
++getspeakerName():string
++getCapacity():int
++setspeakerName(speakerName):void
++setCapacity(Capacity):void
++getfullDetails():string
++getshortDetails():string
+}
+
+class Outdoor
+{
+-weatherStatement:string
++Outdoor(Title, Description, Date, Time, Address, weatherStatement)
++getweatherStatement():string
++setweatherStatement(weatherStatement):void
++getfullDetails():string
++getshortDetails():string
+}
+
+class Reception
+{
+-Email:string
++Reception(Title, Description, Date, Time, Address, Email)
++getEmail():string
++setEmail(Email):void
++getfullDetails():string
++getshortDetails():string
+}
+
+class Address
+{
+-Street:string
+-City:string
+-StateProvince:string
+-Country:string
++Address(Street, City, StateProvince, Country)
++getStreet():string
++getCity():string
++getStateProvince():string
++getCountry():string
++setStreet(Street):string
++setCity(City):string
++setStateProvince(StateProvince):string
++setCountry(Country):string
++getfullAddress():string
+}
+@enduml
