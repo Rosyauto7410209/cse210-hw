@@ -47,16 +47,16 @@ public int getlengthinSeconds()
 public void DisplayDetails()
     {
         Console.WriteLine("Video Details");
-        Console.WriteLine($"Title{getTitle()}");
-        Console.WriteLine($"Author{getAuthor()}");
-        Console.WriteLine($"Length{_lengthinSeconds}");
-        Console.WriteLine($"Comments{GetCommentcount()}");
+        Console.WriteLine($"Title {getTitle()}");
+        Console.WriteLine($"Author {getAuthor()}");
+        Console.WriteLine($"Length {_lengthinSeconds}");
+        Console.WriteLine($"Comments {GetCommentcount()}");
     }
 
 //+DisplayComments(): void
 public void DisplayComments()
     {
-        Console.WriteLine("Comments");
+        Console.WriteLine("Comments: ");
         foreach (Comment comment in _comments)
         {
              comment.DisplayComment();
