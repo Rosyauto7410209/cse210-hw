@@ -14,8 +14,8 @@ class Program
 
         Video video2 = new Video("best snacks of 2020","slimjim", 300);
         video2.AddComment(new Comment("realman", "I prefer number 3 over 2."));
-        video2.AddComment(new Comment("Gabby", "I prefer number 3 over 2."));
-        video2.AddComment(new Comment("ali", "I prefer number 3 over 2."));
+        video2.AddComment(new Comment("Gabby", "Healthier snacks are better in my opinion."));
+        video2.AddComment(new Comment("ali", "I like how this video covered so many new snacks for me to try."));
         videos.Add(video2);
 
         Video video3 = new Video("what is the best color?","crayola", 400);

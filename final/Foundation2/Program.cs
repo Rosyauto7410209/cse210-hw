@@ -30,7 +30,6 @@ foreach(Order order in orders)
             Console.WriteLine(order.gettotalPrice());
             Console.WriteLine("");
             Console.WriteLine(order.getshippinglabel());
-
         }
     }
 }
