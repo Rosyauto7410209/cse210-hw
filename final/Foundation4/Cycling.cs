@@ -1,35 +1,35 @@
-public class Cycling
+public class Cycling:Activity
 {
 //-Speed:double
 private double Speed;
 //+Cycling(Date, Length, Speed)
-public Cycling(string Date, double Length, double Speed)
+public Cycling(string date, double length, double speed):base(date, length)
     {
-        
+        Speed = speed;
     }
 //+getSpeed():double
-public double getSpeed()
+public override double getSpeed()
     {
         return Speed;
     }
 //+setSpeed(Speed):double
-public double setSpeed(Speed)
+public void setSpeed(double speed)
     {
-        Speed = Speed;
+        Speed = speed;
     }
 //+getDistance():double
-public double getDistance()
+public override double getDistance()
     {
-        return Distance;
+        return Speed*getLength()/60;
     }
 //+getPace():double
-public double getPace()
+public override double getPace()
     {
-        return Pace;
+        return 60/Speed;
     }
 //+getName():string   
-public string getName()
+public override string getName()
     {
-        return Name;
+        return "Cycling";
     } 
 }

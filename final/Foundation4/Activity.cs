@@ -7,54 +7,47 @@ private string Date;
 //-Length:double
 private double Length;
 //+Activity(Date, Length)
-public Activity(string Date, double Length)
+public Activity(string date, double length)
     {
-        
-        
+        Date = date;
+        Length = length;
     }
 //getDate():void
-public void getDate()
+public string getDate()
     {
         return Date;
     }
 //+getLength():void
-public void getLength()
+public double getLength()
     {
         return Length;
     }
 //+setDate(Date):string
-public string setDate(Date)
+public void setDate(string date)
     {
-        Date = Date;
+        Date = date;
     }
 //+setLength(Length):double
-public double setLength(Length)
+public void setLength(double length)
     {
         Length = length;
     }
 //+getDistance():double
-public double getDistance()
-    {
-        return Distance;
-    }
+public abstract double getDistance();
+
 //+getSpeed():double
-public double getSpeed()
-    {
-        return Speed;
-    }
+public abstract double getSpeed();
+
 //+getPace():double
-public double getPace()
-    {
-        return Pace;
-    }
+public abstract double getPace();
+
+
 //+getName():string
-public string getName()
-    {
-        return Name;
-    }
+public abstract string getName();
+
 //+getSummary():string   
 public string getSummary()
     {
-        return Summary;
+        return $"{Date} {getName()} ({Length} min): Distance {getDistance():0,0} Miles, Speed:{getSpeed():0,0} mph, Pace:{getPace():0,0} min per mile";
     }
 }

@@ -1,15 +1,14 @@
 using System.ComponentModel.DataAnnotations;
 
-public class Swimming
+public class Swimming:Activity
 {
 //-Laps:int
 private int Laps;
 
 //+Swimming(Date, Length, Laps)
-public Swimming(string Date,double Length, int Laps)
+public Swimming(string date,double length, int laps):base(date, length)
     {
-        
-        
+        Laps = laps;
     }
 //getLaps():int
 public int getLaps()
@@ -17,29 +16,28 @@ public int getLaps()
         return Laps;
     }
 //setLaps(Laps):void
-public void setLaps(Laps)
+public void setLaps(int laps)
     {
-        Laps = Laps;
+        Laps = laps;
     }
 //+getDistance():double
-public double getDistance()
+public override double getDistance()
     {
-        return Distance;
+        return Laps*50/1000*0.62;
     }
 //+getSpeed():double
-public double getSpeed()
+public override double getSpeed()
     {
-        return Speed;
+        return getDistance()/getLength()*60;
     }
 //+getPace():double
-public double getPace()
+public override double getPace()
     {
-        return Pace;
+        return getLength()/getDistance();
     }
 //+getName():string
-public string getName()
+public override string getName()
     {
-        return Name;
+        return "Swimming";
     } 
-
 }

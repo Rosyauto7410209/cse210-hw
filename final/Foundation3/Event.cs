@@ -12,9 +12,13 @@ private string Time;
 //-Address:Address
 private Address address;
 //+Event(Title, Description, Date, Time, Address)
-public Event(string Title,string Description,string Date, string Time, Address address)
+public Event(string title,string description,string date, string time, Address adress)
     {
-        
+        Title = title;
+        Description = description;
+        Date = date;
+        Time = time;
+        address = adress;    
     }
 //+getTitle():string
 public string getTitle()
@@ -39,46 +43,41 @@ public string getTime()
 //+getAddress():Address
 public Address GetAddress()
     {
-      return Address; 
+      return address; 
     }
 //+setTitle(Title):void
-public void setTitle(Title)
+public void setTitle(string title)
     {
         Title = title;
     }
 //+setDescription(Description):void
-public void setDescription(Description)
+public void setDescription(string description)
     {
         Description = description;
     }
 //+setDate(Date):void
-public void setDate(Date)
+public void setDate(string date)
     {
         Date = date;
     }
 //+setTime(Time):void
-public void setTime(Time)
+public void setTime(string time)
     {
         Time = time;
     }
 //+setAddress(Address):void
-public void setAddress(Address address)
+public void setAddress(Address adress)
     {
-        Address = address;
+        address = adress;
     }
 //+getfullDetails():string
-public string getfullDetails()
-    {
-        return fullDetails;
-    }
+public abstract string getfullDetails();
+
 //+getstandardDetails():string
 public string getstandardDetails()
     {
-        return standardDetails;
+        return $"Title: {Title}\nDescription: {Description}\nDate: {Date}\nTime: {Time}\n:Address: {address.getfullAddress()}";
     }
 //+getshortDetails():string
-public string getshortDetails()
-    {
-        return shortDetails;
-    }
+public abstract string getshortDetails();
 }

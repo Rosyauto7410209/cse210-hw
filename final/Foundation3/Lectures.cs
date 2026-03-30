@@ -1,15 +1,16 @@
 using System.Reflection;
 
-public class Lectures
+public class Lectures:Event
 {
 //-speakerName:string
 private string speakerName;
 //-Capacity:int
 private int Capacity;
 //+Lectures(Title, Description, Date, Time, Address, speakerName, Capacity)
-public Lectures(string Title,string Description,string Date,string Time, Address address,string speakerName,int Capacity)
+public Lectures(string title,string description,string date,string time, Address adress,string speakername,int capacity):base(title, description, date, time, adress)
     {
-        
+        speakerName = speakername;
+        Capacity = capacity;
     }
 //+getspeakerName():string
 public string getspeakerName()
@@ -22,23 +23,23 @@ public int getCapacity()
         return Capacity;
     }
 //+setspeakerName(speakerName):void
-public void setspeakerName(speakerName)
+public void setspeakerName(string speakername)
     {
-        
+        speakerName = speakername;
     }
 //+setCapacity(Capacity):void
-public void setCapacity(Capacity)
+public void setCapacity(int capacity)
     {
-        
+        Capacity = capacity;
     }
 //+getfullDetails():string
-public string getfullDetails()
+public override string getfullDetails()
     {
-        return fullDetails;
+        return $"{getstandardDetails()}\nType:Lecture\nSpeaker:{speakerName}\nCapacity:{Capacity}";
     }
 //+getshortDetails():string  
-public string getshortDetails()
+public override string getshortDetails()
     {
-        return shortDetails;
+        return $"Type: Lecture\nTitle:{getTitle()}\nDate: {getDate()}";
     }  
 }

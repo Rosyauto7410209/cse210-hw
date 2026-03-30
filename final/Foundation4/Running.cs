@@ -1,36 +1,38 @@
-public class Running
+public class Running:Activity
 {
 //-Distance:double
 private double Distance;
 //+Running(Date, Length, Distance)
-public Running(string Date, double Length, double Distance)
+public Running(string date, double length, double distance):base(date, length)
     {
-        
+        Distance = distance;
     }
 //+getDistance():double
-public double getDistance()
+public override double getDistance()
     {
         return Distance;
     }
 //+setDistance(Distance):void
-public void setDistance(Distance)
+public void setDistance(double distance)
     {
-        Distance = Distance;
+        Distance = distance;
     }
+
 //+getSpeed():double
-public double getSpeed()
+public override double getSpeed()
     {
-      return Speed;  
+      return getDistance()/getLength()*60;  
     }
 
 //+getPace():double
-public double getPace()
+public override double getPace()
     {
-        return Pace;
+        return getLength()/getDistance();
     }
+
 //+getName():string   
-public string getName()
+public override string getName()
     {
-        return Name;
+        return "Running";
     }
 }

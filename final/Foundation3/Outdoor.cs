@@ -1,13 +1,13 @@
 using System.Reflection;
 
-public class Outdoor
+public class Outdoor:Event
 {
 //-weatherStatement:string
 private string weatherStatement;
 //+Outdoor(Title, Description, Date, Time, Address, weatherStatement)
-public Outdoor(string Title,string Description,string Date,string Time, Address address,string weatherStatement)
+public Outdoor(string title,string description,string date,string time, Address adress,string weatherstatement):base(title, description, date, time, adress)
     {
-        
+        weatherStatement = weatherstatement;
     }
 //+getweatherStatement():string
 public string getweatherStatement()
@@ -15,18 +15,18 @@ public string getweatherStatement()
         return weatherStatement;
     }
 //+setweatherStatement(weatherStatement):void
-public void setweatherStatement(weatherStatement)
+public void setweatherStatement(string weatherstatement)
     {
-        
+        weatherStatement = weatherstatement;        
     }
 //+getfullDetails():string
-public string getfullDetails()
+public override string getfullDetails()
     {
-        return fullDetails;
+        return $"{getstandardDetails()}\nType: Outdoor Gathering\nWeather: {weatherStatement}";
     }
 //+getshortDetails():string
-public string getshortDetails()
+public override string getshortDetails()
     {
-        return shortDetails;
+        return $"Type: Outdoor Gathering\nTitle: {getTitle()}\nDate: {getDate()}";
     }
 }

@@ -19,13 +19,11 @@ public Address(string street,string city,string stateProvince,string country)
         StateProvince = stateProvince;
         Country = country;
     }
-
 //+getStreet():string
 public string getStreet()
     {
         return Street;
     }
-
 //+getCity():string
 public string getCity()
     {
@@ -60,11 +58,6 @@ public void setStateProvince(string stateProvince)
 public void setCountry(string country)
     {
        Country = country; 
-    }
-//+LivesinUSA():bool
-public bool LivesinUSA()
-    {
-       return Country.ToLower() == "usa" || Country.ToLower() == "united states";
     }
 //+getfullAddress():string
 public string getfullAddress()
